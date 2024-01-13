@@ -19,3 +19,8 @@
    git branch -d 分支名称
 
    ![image-20240113173420336](C:\Users\椋\AppData\Roaming\Typora\typora-user-images\image-20240113173420336.png)
+
+### 轮播图
+
++ 接口: https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata
+
