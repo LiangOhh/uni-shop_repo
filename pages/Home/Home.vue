@@ -1,8 +1,5 @@
 <template>
 	<view>
-		<!-- <view>
-			<button @click="sendRequest" type="primary" size="mini">点我发送网络请求</button>
-		</view> -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" circular="true"
 			class="itembox">
 			<swiper-item v-for="(item,index) in swiperList" :key="item.index">
