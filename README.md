@@ -26,3 +26,15 @@
 
 + 接口: https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata
 
+### 伪元素
+
+![image-20240114213800449](C:\Users\椋\AppData\Roaming\Typora\typora-user-images\image-20240114213800449.png)
+
+网站：https://zhuanlan.zhihu.com/p/521672435?utm_id=0
+
+
+
+### 分类页面
+
+url: 'https://api-hmugo-web.itheima.net/api/public/v1/categories',
+
