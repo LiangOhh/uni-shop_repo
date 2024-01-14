@@ -22,5 +22,7 @@
 
 ### 轮播图
 
++ https://www.showdoc.com.cn/128719739414963/2513278140891548
+
 + 接口: https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata
 

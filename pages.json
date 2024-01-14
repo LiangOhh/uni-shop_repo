@@ -29,6 +29,17 @@
 			}
 		}
 	],
+	"subPackages": [{
+		"root": "pagesA",
+		"pages": [{
+			"path": "detial/detial",
+			"style": {
+				"navigationBarTitleText": "详情页",
+				"enablePullDownRefresh": false
+			}
+		}]
+
+	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
