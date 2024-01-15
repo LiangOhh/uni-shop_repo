@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<view class="searchTop">
+			<MySearch></MySearch>
+		</view>
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" circular="true"
 			class="itembox">
 			<swiper-item v-for="(item,index) in swiperList" :key="item.index">
@@ -114,6 +117,12 @@
 </script>
 
 <style lang="scss">
+	.searchTop {
+		position: sticky;
+		top: 0;
+		z-index: 999;
+	}
+
 	swiper {
 		height: 300rpx;
 

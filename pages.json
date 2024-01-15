@@ -37,6 +37,14 @@
 				"navigationBarTitleText": "详情页",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path" : "search/search",
+			"style" : 
+			{
+				"navigationBarTitleText" : "输入商品关键词",
+				"enablePullDownRefresh" : false
+			}
 		}]
 
 	}],

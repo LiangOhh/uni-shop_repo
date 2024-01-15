@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<view class="">
+			<MySearch></MySearch>
+		</view>
 		<view class="scroll_box">
 
 			<view>
@@ -93,8 +96,9 @@
 		},
 		onLoad() {
 			// 获取屏幕高度
-			// console.log(uni.getSystemInfoSync().windowHeight)
-			this.w_height = uni.getSystemInfoSync().windowHeight
+			// console.log(uni.getSystemInfoSync().windowHeight)  50为搜索组件占据的高度
+			this.w_height = uni.getSystemInfoSync().windowHeight - 50
+
 			this.sendCate()
 		}
 	}
