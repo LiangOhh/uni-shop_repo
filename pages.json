@@ -32,20 +32,29 @@
 	"subPackages": [{
 		"root": "pagesA",
 		"pages": [{
-			"path": "detial/detial",
-			"style": {
-				"navigationBarTitleText": "详情页",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path" : "search/search",
-			"style" : 
+				"path": "detial/detial",
+				"style": {
+					"navigationBarTitleText": "详情页",
+					"enablePullDownRefresh": false
+				}
+			},
 			{
-				"navigationBarTitleText" : "输入商品关键词",
-				"enablePullDownRefresh" : false
+				"path": "search/search",
+				"style": {
+					"navigationBarTitleText": "输入商品关键词",
+					"enablePullDownRefresh": false
+				}
+			},
+			{
+				"path": "shopList/shopList",
+				"style": {
+					"navigationBarTitleText": "商品列表",
+					"enablePullDownRefresh": true,
+					"onReachBottomDistance": 150
+
+				}
 			}
-		}]
+		]
 
 	}],
 	"globalStyle": {

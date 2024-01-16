@@ -36,5 +36,7 @@
 
 ### 分类页面
 
-url: 'https://api-hmugo-web.itheima.net/api/public/v1/categories',
++ url: 'https://api-hmugo-web.itheima.net/api/public/v1/categories',
+
++ 接口文档:https://www.showdoc.com.cn/128719739414963/2526159696464209
 

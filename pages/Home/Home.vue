@@ -21,15 +21,19 @@
 
 		<view class="floor">
 			<view class="content" v-for="(content,index) in floorList" :key="index">
-				<image class="title_image" :src="content.floor_title.image_src" mode="aspectFill"></image>
+				<image class=" title_image" :src="content.floor_title.image_src" mode="aspectFill">
+				</image>
 				<view class="content_image_box">
 					<view class="content_image_left">
-						<image :src="content.product_list[0].image_src" mode="widthFix"></image>
+						<image :src="content.product_list[0].image_src" mode="widthFix" @click="()=>ToshopList(content.product_list[0].navigator_url
+)">
+						</image>
 					</view>
 					<view class="content_image_right">
 						<view v-for="(right_images,index2) in content.product_list" :key="index2" v-if="index2 !== 0">
 							<image :src="right_images.image_src" mode="widthFix"
-								:style="{width: right_images.image_width + 'rpx'}"></image>
+								:style="{width: right_images.image_width + 'rpx'}" @click="()=>ToshopList(right_images.navigator_url
+)"></image>
 						</view>
 					</view>
 
@@ -58,10 +62,18 @@
 				uni.request({
 					url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata',
 					success: (res) => {
-						// console.log(res.data)
+						console.log(res.data)
 						this.swiperList = res.data.message
 						// console.log(this.swiperList)
 					}
+				})
+			},
+			ToshopList(e) {
+				// console.log(e)
+				const query = e.split('?')[1]
+				console.log(query)
+				uni.navigateTo({
+					url: '/pagesA/shopList/shopList?' + query,
 				})
 			},
 			Todetial(item, index) {
