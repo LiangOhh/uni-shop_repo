@@ -99,7 +99,19 @@
 					current: index,
 					urls: this.Info.pics.map(x => x.pics_big)
 				})
-			}
+			},
+			// 导航点击事件
+			onClick(e) {
+				console.log(e)
+				uni.showToast({
+					title: `点击${e.content.text}`,
+					icon: 'none'
+				})
+			},
+			buttonClick(e) {
+				console.log(e)
+				this.options[1].info++
+			},
 
 		}
 	}
