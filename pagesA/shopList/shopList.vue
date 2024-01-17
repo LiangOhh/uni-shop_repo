@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="shops-list">
-			<view v-for="(goods, index) in shopList" :key="index" @click="gotoDetail(goods)">
+			<view v-for="(goods, index) in shopList" :key="index" @click="()=>gotoDetail(goods)">
 				<MyGoods :goods="goods"></MyGoods>
 			</view>
 		</view>
@@ -81,19 +81,15 @@
 					console.log(err)
 				} finally {
 					this.isloading = false
-					stop_refresh && stop_refresh()
+					// stop_refresh && stop_refresh()
 					uni.hideLoading()
 
 				}
 			},
 			gotoDetail(shop) {
-				console.log(shop.goods_id)
+				console.log(shop)
 				uni.navigateTo({
-					// url: `/pagesA/detial/detial?goods_id=${shop.goods_id}`,
-					url: '/pagesA/detial/detial',
-					data: {
-						goods_id: shop.goods_id
-					}
+					url: `/pagesA/detial/detial?goods_id=${shop.goods_id}`,
 				})
 			}
 		}
