@@ -90,7 +90,9 @@
 			goTo(e) {
 				// console.log(e.cat_name)
 				uni.navigateTo({
-					url: `/pagesA/detial/detial?cid=${e.cat_id}`
+					// url: `/pagesA/detial/detial?cid=${e.cat_id}`
+					// url: `/pagesA/detial/detial?goods_id=${e.cat_id}`,
+					url: `/pagesA/shopList/shopList?query=${e.cat_name}`,
 				})
 			}
 		},

@@ -40,3 +40,16 @@
 
 + 接口文档:https://www.showdoc.com.cn/128719739414963/2526159696464209
 
+
+
+### Vuex
+
+https://vuex.vuejs.org/zh/#%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E6%A8%A1%E5%BC%8F%E2%80%9D%EF%BC%9F
+
+![image-20240117212235423](C:\Users\椋\AppData\Roaming\Typora\typora-user-images\image-20240117212235423.png)
+
++ State:
+
+  object数据对象,
+
+  

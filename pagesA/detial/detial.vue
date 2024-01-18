@@ -20,6 +20,9 @@
 				</view>
 			</view>
 			<view class="yf">快递：免运费</view>
+			<!-- 测试mapState
+			<view class="yf">快递：免运费{{cart.length}}</view> 
+			 -->
 		</view>
 
 		<view class="introduction_box">
@@ -36,6 +39,12 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations,
+		mapGetters
+	} from "vuex"
+
 	export default {
 		data() {
 			return {
@@ -49,7 +58,7 @@
 				}, {
 					icon: 'cart',
 					text: '购物车',
-					info: 1
+					info: this.total
 				}],
 				customButtonGroup: [{
 						text: '加入购物车',
@@ -70,8 +79,39 @@
 			const id = option.goods_id
 			await this.getInfo(id)
 			// console.log(this.Info)
+			// console.log('点击之前的store', this)
 
 		},
+		computed: {
+			// ...mapState('模块的名称', ['要映射的数据名称1', '要映射的数据名称2'])
+			...mapState('m_cart', ['cart']),
+			...mapGetters('m_cart', ['getTotal'])
+		},
+		watch: {
+			// 1. 监听 total 值的变化，通过第一个形参得到变化后的新值
+			/* getTotal(newVal) {
+				// 2. 通过数组的 find() 方法，找到购物车按钮的配置对象
+				const findResult = this.options.find((x) => x.text === '购物车')
+
+				if (findResult) {
+					// 3. 动态为购物车按钮的 info 属性赋值
+					findResult.info = newVal
+				}
+			},
+ */
+			getTotal: {
+				// handler 属性用来定义侦听器的 function 处理函数
+				handler(newVal) {
+					const findResult = this.options.find(x => x.text === '购物车')
+					if (findResult) {
+						findResult.info = newVal
+					}
+				},
+				// immediate 属性用来声明此侦听器，是否在页面初次加载完毕后立即调用
+				immediate: true
+			}
+		},
+
 		methods: {
 			async getInfo(id) {
 				try {
@@ -102,18 +142,43 @@
 			},
 			// 导航点击事件
 			onClick(e) {
-				console.log(e)
-				uni.showToast({
-					title: `点击${e.content.text}`,
-					icon: 'none'
-				})
+				if (e.content.text === '购物车') {
+					uni.switchTab({
+						url: '/pages/Cart/Cart'
+					})
+				} else {
+					uni.showToast({
+						title: `点击${e.content.text}`,
+						icon: 'none'
+					})
+				}
 			},
 			buttonClick(e) {
 				console.log(e)
-				this.options[1].info++
-			},
+				if (e.content.text === '加入购物车') {
+					// 获取页面商品信息
+					// console.log(this.Info)
+					// const goods = this.Info
+					const goods = {
+						goods_id: this.Info.goods_id, // 商品的Id
+						goods_name: this.Info.goods_name, // 商品的名称
+						goods_price: this.Info.goods_price, // 商品的价格
+						goods_count: 1, // 商品的数量
+						goods_small_logo: this.Info.goods_small_logo, // 商品的图片
+						goods_state: true // 商品的勾选状态
+					}
+					console.log(goods)
+					this.addToCart(goods)
+					console.log('点击之后的store', this)
+				}
 
-		}
+				// this.options[1].info++
+			},
+			...mapMutations('m_cart', ['addToCart']),
+
+		},
+
+
 	}
 </script>
 

@@ -61,7 +61,11 @@
 		},
 		onLoad() {
 			this.w_height = uni.getSystemInfoSync().windowHeight - 50
-		}
+			uni.$on('callSearchInfo', this.searchInfo)
+
+		},
+
+
 	}
 </script>
 
