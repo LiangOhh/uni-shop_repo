@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import moduleCart from './cart.js'
+import moduleUser from './user.js'
 const state = {}
 const actions = {}
 const mutations = {}
@@ -12,7 +13,8 @@ export default new Vuex.Store({
 	actions,
 	mutations,
 	modules: {
-		m_cart: moduleCart
+		m_cart: moduleCart,
+		m_user: moduleUser,
 	}
 })
 
