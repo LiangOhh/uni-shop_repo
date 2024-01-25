@@ -2,7 +2,7 @@
 	<view>
 		<MyAddress></MyAddress>
 		<!-- 购物车商品列表的标题区域 -->
-		<view>
+		<view class="cart-container">
 
 
 			<view class="title">
@@ -24,7 +24,7 @@
 				</uni-swipe-action>
 			</view>
 		</view>
-
+		<MySettle></MySettle>
 	</view>
 </template>
 
@@ -84,6 +84,10 @@
 </script>
 
 <style lang="scss">
+	.cart-container {
+		padding-bottom: 50px;
+	}
+
 	.title {
 		// background-color: red;
 		height: 40px;

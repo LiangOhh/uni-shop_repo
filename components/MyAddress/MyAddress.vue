@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="address-info-box" @click="">
+		<view class="address-info-box" @click="createAddress">
 			<view class="button-box" v-if="JSON.stringify(address)==='{}'">
 				<button type="primary" size="mini" class="btnChooseAddress" @click="createAddress">添加收货地址</button>
 			</view>
@@ -51,9 +51,12 @@
 					// this.address = res
 					this.updateAddress(res)
 				}
+				if (res.errMsg != 'chooseAddress:ok') {
+					uni.$showMsg('您取消了地址授权！')
+				}
 
-				// console.log(res)
-				console.log(this.address)
+
+
 			}
 		},
 		computed: {

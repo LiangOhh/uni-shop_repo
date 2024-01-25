@@ -56,7 +56,12 @@ export default {
 			state.cart = state.cart.filter(x => x.goods_id !== goods_id)
 			// 持久化存储到本地
 			this.commit('m_cart/saveToStorage')
+		},
+		updateAllGoodsState(state, newState) {
+			state.cart.forEach(x => x.goods_state = newState)
+			this.commit('m_cart/saveToStorage')
 		}
+
 	},
 	getters: {
 		getTotal(state) {
@@ -64,6 +69,14 @@ export default {
 			// 循环统计商品的数量，累加到变量 c 中
 			state.cart.forEach(goods => total += goods.goods_count)
 			return total
+		},
+		checkedCount(state) {
+			return state.cart.filter(x => x.goods_state).reduce((total, item) => total += item.goods_count, 0)
+		},
+		checkedGoodsAmount(state) {
+			return state.cart.filter(x => x.goods_state)
+				.reduce((total, item) => total += item.goods_count * item.goods_price, 0)
+				.toFixed(2)
 		}
 	},
 
