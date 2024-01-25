@@ -1,6 +1,6 @@
 <template>
 	<view>
-		
+		<MyUser></MyUser>
 	</view>
 </template>
 
@@ -8,11 +8,11 @@
 	export default {
 		data() {
 			return {
-				
+
 			}
 		},
 		methods: {
-			
+
 		}
 	}
 </script>
