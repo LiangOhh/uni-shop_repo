@@ -2,9 +2,7 @@
 	<view>
 		<MyAddress></MyAddress>
 		<!-- 购物车商品列表的标题区域 -->
-		<view class="cart-container">
-
-
+		<view class="cart-container" v-if="cart.length">
 			<view class="title">
 				<!-- 左侧的图标 -->
 				<uni-icons type="shop" size="22" color="red"></uni-icons>
@@ -23,6 +21,11 @@
 					</block>
 				</uni-swipe-action>
 			</view>
+		</view>
+
+		<view class="empty-container" v-else>
+			<image class="empty-img" src="../../static/cart_empty@2x.png" mode="aspectFill"></image>
+			<text class="tip-text">快去添加宝贝吧</text>
 		</view>
 		<MySettle></MySettle>
 	</view>
@@ -106,5 +109,24 @@
 	.shopBox {
 		margin-top: 5px;
 		display: flex;
+	}
+
+	.empty-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		// text-align: center;
+		padding-top: 150px;
+
+		.empty-img {
+			width: 90px;
+			height: 90px;
+		}
+
+		.tip-text {
+			font-size: 18px;
+			color: gray;
+			margin-top: 15px;
+		}
 	}
 </style>
