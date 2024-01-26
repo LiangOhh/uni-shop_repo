@@ -8,13 +8,19 @@ import store from "./store"
 import './uni.promisify.adaptor'
 Vue.config.productionTip = false
 App.mpType = 'app'
+uni.$showMsg = function(title = '数据加载失败！', duration = 1500) {
+	uni.showToast({
+		title,
+		duration,
+		icon: 'none',
+	})
+}
 const app = new Vue({
 	...App,
 	store
 })
 app.$mount()
 // #endif
-
 // #ifdef VUE3
 import {
 	createSSRApp
@@ -24,5 +30,6 @@ export function createApp() {
 	return {
 		app
 	}
+
 }
 // #endif
