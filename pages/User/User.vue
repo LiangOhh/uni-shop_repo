@@ -1,10 +1,14 @@
 <template>
 	<view>
-		<MyUser></MyUser>
+		<MyUser v-if="!token"></MyUser>
+		<MyInfo v-else></MyInfo>
 	</view>
 </template>
 
 <script>
+	import {
+		mapState
+	} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -13,6 +17,9 @@
 		},
 		methods: {
 
+		},
+		computed: {
+			...mapState('m_user', ['token'])
 		}
 	}
 </script>

@@ -68,7 +68,8 @@
 			"scope.userLocation": {
 				"desc": "你的位置信息将用来进行接口调试"
 			}
-		}
+		},
+		"libVersion": "latest"
 
 
 
