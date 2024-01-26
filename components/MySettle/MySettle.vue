@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="settle">
+		<view class="settle" v-if="cart.length">
 			<label class="radio" @click="changeAllState">
 				<radio color="#C00000" :checked="isFullCheck" /><text>全选</text>
 			</label>
@@ -16,7 +16,8 @@
 <script>
 	import {
 		mapGetters,
-		mapMutations
+		mapMutations,
+		mapState
 	} from 'vuex'
 	export default {
 		name: "MySettle",
@@ -27,6 +28,7 @@
 		},
 		computed: {
 			...mapGetters('m_cart', ['checkedCount', 'getTotal', 'checkedGoodsAmount']),
+			...mapState('m_cart', ['cart']),
 			isFullCheck() {
 				return this.getTotal === this.checkedCount
 			},
